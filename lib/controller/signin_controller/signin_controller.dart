@@ -34,7 +34,7 @@ Future<void> Signin()async{
       for (var row in results) {
         print('Email: ${row[0]}, Password: ${row[1]}, Active: ${row[2]}');
         // Here you can set the state of your widget to display the data
-        Get.offAll(()=> homeScreen());
+        Get.offAll(()=> NavigatorScreen());
       }
   }catch(e){
 
