@@ -26,6 +26,7 @@ Future<void> Signin()async{
     try {
       // Call the stored procedure with the email parameter
       var results = await conn.query(
+        /// YOUR QUERY FOR EMAIL AND PASSWORD WILL COME HERE
       'CALL swfgetuser("${email.text.trim()}")');
       print(results);
 
@@ -33,7 +34,7 @@ Future<void> Signin()async{
       for (var row in results) {
         print('Email: ${row[0]}, Password: ${row[1]}, Active: ${row[2]}');
         // Here you can set the state of your widget to display the data
-        Get.offAll(()=> SigninScreen());
+        Get.offAll(()=> homeScreen());
       }
   }catch(e){
 
